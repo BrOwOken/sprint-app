@@ -1,6 +1,9 @@
 ### MAC PRDEL KRYSTOFOVA ###
 .DS_Store
 
+### PRDEL OD JIRY ###
+credentials.js
+
 # Created by https://www.toptal.com/developers/gitignore/api/vue,vuejs,node
 # Edit at https://www.toptal.com/developers/gitignore?templates=vue,vuejs,node
 
