@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/BrOwOken/sprint-app#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.2",
     "jira.js": "^2.10.0"
   }
