@@ -1,21 +1,32 @@
 var jira = require('jira.js');
+var express = require('express')
 
 const client = new jira.Version2Client({
     host: 'https://kybernaproject.atlassian.net',
     authentication: {
         basic: {
             email: 'maruscak.jan@ssakhk.cz',
-            apiToken: 'Pd6NtSccW8e6v0510J5p39C8',
+            apiToken: 'nAzuGGpTzn2gVhHHCq250D47',
         },
     },
 });
 
-async function main() {
+async function getFirstProjectName() {
     const projects = await client.projects.getAllProjects();
 
-    console.log(projects);
+    return projects[0].name
 }
 
-main();
+var app = express()
+const port = 3000
 
-console.log("pepas")
+
+// respond with "hello world" when a GET request is made to the homepage
+app.get('/', async function (req, res) {
+    var result = await getFirstProjectName()
+  res.send(result)
+})
+
+app.listen(port, () => {
+    console.log(`Example app listening at http://localhost:${port}`)
+  })
